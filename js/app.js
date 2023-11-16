@@ -1,26 +1,93 @@
 document.getElementById('anio').innerHTML = new Date().getFullYear();
 document.getElementById('añoCampusDesktop').innerHTML = new Date().getFullYear();
-document.getElementById('añoCampusMobile').innerHTML = new Date().getFullYear();
+// document.getElementById('añoCampusMobile').innerHTML = new Date().getFullYear();
+
 document.getElementById('login-btn').addEventListener('click', () => {
-    var usuario = document.getElementById("email").value;
-    var contraseña = document.getElementById("password").value;
+    var user = document.getElementById("user").value;
+    var pass = document.getElementById("password").value;
+    const logIn = document.getElementById('logIn');
     const content = document.getElementById('main');
 
-    if (usuario === "admin" && contraseña === "password") {
+    if (user === "admin" && pass === "password") {
         logIn.style.display = 'none';
         content.style.display = 'block';
+        document.getElementById('user').value = "";
+        document.getElementById('password').value = "";
     } else {
-        alert("Usuario o contraseña incorrecta.");
+      Swal.fire(
+        'ERROR!',
+        'Por favor, introduzca el usuario y contraseña correctos.',
+        'error'
+    )
     }
 });
 
+function claveVisibleLogin() {
+  var pass = document.getElementById("password");
+  var eyeIcon = document.getElementById("eye-icon");
 
-const sidebarBtn = document.querySelector(".toggle-btn");
-const sidebar = document.querySelector("aside");
+  if (pass.type === "password") {
+    pass.type = "text";
+    eyeIcon.classList.add("bi-eye-slash");
+    eyeIcon.classList.remove("bi-eye");
+  } else {
+    pass.type = "password";
+    eyeIcon.classList.remove('bi-eye-slash');
+    eyeIcon.classList.add('bi-eye')
+  }
+};
+function claveVisibleSignUp() {
+  var pass = document.getElementById("passwordNew");
+  var eyeIcon = document.getElementById("eye-icon-new");
 
-sidebarBtn.addEventListener('click', () => {
-    document.body.classList.toggle('active');
-})
+  if (pass.type === "password") {
+    pass.type = "text";
+    eyeIcon.classList.add("bi-eye-slash");
+    eyeIcon.classList.remove("bi-eye");
+  } else {
+    pass.type = "password";
+    eyeIcon.classList.remove('bi-eye-slash');
+    eyeIcon.classList.add('bi-eye')
+  }
+};
+function claveVisibleSignUp2() {
+  var pass2 = document.getElementById("passwordNew2");
+  var eyeIcon2 = document.getElementById("eye-icon-new-2");
+
+  if (pass2.type === "password") {
+    pass2.type = "text";
+    eyeIcon2.classList.add("bi-eye-slash");
+    eyeIcon2.classList.remove("bi-eye");
+  } else {
+    pass2.type = "password";
+    eyeIcon2.classList.remove('bi-eye-slash');
+    eyeIcon2.classList.add('bi-eye')
+  }
+};
+
+document.getElementById("signup-link").addEventListener('click', () => {
+  const logIn = document.getElementById("login");
+  const singUp = document.getElementById("singUp");
+
+  logIn.style.display = "none";
+  singUp.style.display = "block";
+});
+
+document.getElementById("login-link").addEventListener('click', () => {
+  const logIn = document.getElementById("login");
+  const singUp = document.getElementById("singUp");
+
+  singUp.style.display = "none";
+  logIn.style.display = "block";
+});
+
+document.getElementById('btn-exit').addEventListener('click', () => {
+  const logIn = document.getElementById('logIn');
+  const content = document.getElementById('main');
+  
+  logIn.style.display = 'block';
+  content.style.display = 'none';
+});
 
 document.getElementById("btn-home").addEventListener('click', () => {
   var home = document.getElementById("contenido-home");
@@ -36,80 +103,75 @@ document.getElementById("btn-home").addEventListener('click', () => {
   }
 });
 
-document.getElementById("btn-alumnos").addEventListener('click', () => {
-  var home = document.getElementById("contenido-home");
-  var alumnos = document.getElementById("contenido-alumnos");
-
-  if (home.style.display === 'none') {
-    home.style.display = 'block';
-    alumnos.style.display = 'none';
-  } else {
-    home.style.display = 'none';
-    alumnos.style.display = 'block';
-  }
-});
-document.getElementById("area-alumnos").addEventListener('click', () => {
-  var home = document.getElementById("contenido-home");
-  var alumnos = document.getElementById("contenido-alumnos");
-
-  if (home.style.display === 'none') {
-    home.style.display = 'block';
-    maestros.style.display = 'none';
-  } else {
-    home.style.display = 'none';
-    alumnos.style.display = 'block';
-  } 
-});
-
 document.getElementById("btn-maestros").addEventListener('click', () => {
   var home = document.getElementById("contenido-home");
   var maestros = document.getElementById("contenido-maestros");
+  var alumnos = document.getElementById("contenido-alumnos");
+  var materias = document.getElementById("contenido-materias");
 
-  if (home.style.display === 'none') {
-    home.style.display = 'block';
-    maestros.style.display = 'none';
-  } else {
-    home.style.display = 'none';
-    maestros.style.display = 'block';
-  }
+  maestros.style.display = "block";
+  home.style.display = 'none';
+  alumnos.style.display = 'none';
+  materias.style.display = 'none';
 });
 document.getElementById("area-maestros").addEventListener('click', () => {
   var home = document.getElementById("contenido-home");
   var maestros = document.getElementById("contenido-maestros");
+  var alumnos = document.getElementById("contenido-alumnos");
+  var materias = document.getElementById("contenido-materias");
 
-  if (home.style.display === 'none') {
-    home.style.display = 'block';
-    maestros.style.display = 'none';
-  } else {
-    home.style.display = 'none';
-    maestros.style.display = 'block';
-  } 
+  maestros.style.display = "block";
+  home.style.display = 'none';
+  alumnos.style.display = 'none';
+  materias.style.display = 'none';
+});
+
+document.getElementById("btn-alumnos").addEventListener('click', () => {
+  var home = document.getElementById("contenido-home");
+  var maestros = document.getElementById("contenido-maestros");
+  var alumnos = document.getElementById("contenido-alumnos");
+  var materias = document.getElementById("contenido-materias");
+
+  alumnos.style.display = "block";
+  home.style.display = 'none';
+  maestros.style.display = 'none';
+  materias.style.display = 'none';
+});
+document.getElementById("area-alumnos").addEventListener('click', () => {
+  var home = document.getElementById("contenido-home");
+  var maestros = document.getElementById("contenido-maestros");
+  var alumnos = document.getElementById("contenido-alumnos");
+  var materias = document.getElementById("contenido-materias");
+
+  alumnos.style.display = "block";
+  home.style.display = 'none';
+  maestros.style.display = 'none';
+  materias.style.display = 'none';
 });
 
 document.getElementById("btn-materias").addEventListener('click', () => {
   var home = document.getElementById("contenido-home");
+  var maestros = document.getElementById("contenido-maestros");
+  var alumnos = document.getElementById("contenido-alumnos");
   var materias = document.getElementById("contenido-materias");
 
-  if (home.style.display === 'none') {
-    home.style.display = 'block';
-    materias.style.display = 'none';
-  } else {
-    home.style.display = 'none';
-    materias.style.display = 'block';
-  }
+  materias.style.display = "block";
+  home.style.display = 'none';
+  maestros.style.display = 'none';
+  alumnos.style.display = 'none';
 });
 document.getElementById("area-materias").addEventListener('click', () => {
   var home = document.getElementById("contenido-home");
+  var maestros = document.getElementById("contenido-maestros");
+  var alumnos = document.getElementById("contenido-alumnos");
   var materias = document.getElementById("contenido-materias");
 
-  if (home.style.display === 'none') {
-    home.style.display = 'block';
-    materias.style.display = 'none';
-  } else {
-    home.style.display = 'none';
-    materias.style.display = 'block';
-  } 
+  materias.style.display = "block";
+  home.style.display = 'none';
+  maestros.style.display = 'none';
+  alumnos.style.display = 'none';
 });
+
 
 const allLinks = document.querySelectorAll(".tabs-maestros a");
 const allTabs = document.querySelectorAll(".tab-content-maestros")
@@ -240,28 +302,28 @@ activeLinkMaterias.classList.toggle('active');
 shiftTabsMaterias(activeLink.id);
 
 
-const btnMenuMobile = document.getElementById('btnMenuMobile');
-const dropdown = document.querySelector('.dropdown__wrapper--fade-in');
-btnMenuMobile.addEventListener('click', () => {
-    dropdown.classList.remove('none');
-    dropdown.classList.toggle('hide');
-});
-document.addEventListener("click", (event) => {
-    const isClickInsideDropdown = dropdown.contains(event.target);
-    const isButtonClicked = button.contains(event.target);
-    if (!isClickInsideDropdown && !isButtonClicked) {
-        dropdown.classList.add('hide');
-        dropdown.classList.add('dropdown__wrapper--fade-in');
-    }
-});
+// const btnMenuMobile = document.getElementById('btnMenuMobile');
+// const dropdown = document.querySelector('.dropdown__wrapper--fade-in');
+// btnMenuMobile.addEventListener('click', () => {
+//     dropdown.classList.remove('none');
+//     dropdown.classList.toggle('hide');
+// });
+// document.addEventListener("click", (event) => {
+//     const isClickInsideDropdown = dropdown.contains(event.target);
+//     const isButtonClicked = button.contains(event.target);
+//     if (!isClickInsideDropdown && !isButtonClicked) {
+//         dropdown.classList.add('hide');
+//         dropdown.classList.add('dropdown__wrapper--fade-in');
+//     }
+// });
 
-const btnMenu = document.querySelector('.btnMenu');
-const closeButton = document.querySelector('.close');
-const menu = document.querySelector('.menu');
-btnMenu.addEventListener('click', () => {
-    menu.classList.remove('none');
-    menu.classList.remove('hide');
-});
-closeButton.addEventListener('click', () => {
-    menu.classList.add('hide');
-});
+// const btnMenu = document.querySelector('.btnMenu');
+// const closeButton = document.querySelector('.close');
+// const menu = document.querySelector('.menu');
+// btnMenu.addEventListener('click', () => {
+//     menu.classList.remove('none');
+//     menu.classList.remove('hide');
+// });
+// closeButton.addEventListener('click', () => {
+//     menu.classList.add('hide');
+// });
