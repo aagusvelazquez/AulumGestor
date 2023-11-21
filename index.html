@@ -208,35 +208,119 @@
         
         <div class="div-desktop">
             <!-- Barra de Navegación Lateral -->
-            <nav>
+            <div class="sidebar">
+                <div class="sidebar-header">
+                  <a href="" class="logo-wrapper">
+                    <img src="./assets/img/logo.png" alt="Logo">
+                    <h2 class="hidden">MENÚ</h2>
+                  </a>
+                  <button class="sidebar-btn"><i class="bi bi-arrow-bar-right"></i></button>
+                </div>
+                <div class="sidebar-links">
+                  <ul>
+                    <li class="menu-item" id="btn-home" title="Inicio">
+                      <i class="bi bi-house"></i>
+                      <span class="hidden">Home</span>
+                    </li>
+                    <li class="menu-dropdown" id="btn-maestros" title="Maestros" onmouseover="showDropdown(this)" onmouseout="hideDropdown(this)">
+                      <div class="menu-item">
+                        <i class="bi bi-bank"></i>
+                        <span class="hidden">Maestros</span>
+                      </div>
+                      <ul class="dropdown">
+                          <li>Crear Alta</li>
+                          <li>Modificar Alta</li>
+                          <li>Buscar Alta</li>
+                          <li>Eliminar Alta</li>
+                          <li>Descargar Fichero</li>
+                      </ul>
+                    </li>
+                    <li class="menu-dropdown" id="btn-alumnos" title="Alumnos" onmouseover="showDropdown(this)" onmouseout="hideDropdown(this)">
+                      <div class="menu-item">
+                        <i class="bi bi-backpack"></i>
+                        <span class="hidden">Alumnos</span>
+                      </div>
+                      <ul class="dropdown">
+                        <li>Crear Alta</li>
+                        <li>Modificar Alta</li>
+                        <li>Buscar Alta</li>
+                        <li>Eliminar Alta</li>
+                        <li>Descargar Fichero</li>
+                      </ul>
+                    </li>
+                    <li class="menu-dropdown" id="btn-materias" title="Materias" onmouseover="showDropdown(this)" onmouseout="hideDropdown(this)">
+                      <div class="menu-item">
+                        <i class="bi bi-journal-bookmark"></i>
+                        <span class="hidden">Materias</span>
+                      </div>
+                      <ul class="dropdown">
+                        <li>Dar Alta</li>
+                        <li>Modificar Materia</li>
+                        <li>Buscar Materia</li>
+                        <li>Eliminar Materia</li>
+                        <li>Descargar Fichero</li>
+                      </ul>
+                    </li>
+                    <li class="menu-item" id="btn-novedades" title="Novedades">
+                        <i class="bi bi-chat-dots"></i>
+                        <span class="hidden">Novedades</span>
+                    </li>
+                  </ul>
+                </div>
+                <div class="sidebar-bottom">
+                  <a class="menu-item exit" href="#" id="btn-exit" title="Cerrar Sesión">
+                    <i class="bi bi-box-arrow-left"></i>
+                    <span class="hidden">Cerrar Sesión</span>
+                  </a>
+                </div>
+            </div>
+            <!-- <nav>
                 <div class="sidebar-header">
                     <a class="logo-wrapper">
                         <img src="./assets/img/logo.png" alt="Logo">
+                        <h2 class="hidden">Menú</h2>
                     </a>
+                    <button class="sidebar-btn">
+                        <i class="bi bi-arrow-bar-right"></i>
+                    </button>
                 </div>
                 <div class="sidebar-links">
-                    <a class="link active home" href="#" id="btn-home" title="Inicio">
+                    <a class="link home" href="#" id="btn-home" title="Inicio">
                         <i class="bi bi-house"></i>
+                        <span class="hidden">Inicio</span>
                     </a>
-                    <a class="link active gestionar-maestros" href="#" id="btn-maestros" title="Maestros">
-                        <i class="bi bi-bank"></i>
+                    <a class="gestionar-maestros" href="#" id="btn-maestros" title="Maestros">
+                        <div class="link">
+                            <i class="bi bi-bank"></i>
+                            <span class="hidden">Maestros</span>
+                        </div>
+                        <div class="dropdown" style="display: none;">
+                            <ul>
+                                <li>Crear Alta</li>
+                                <li>Modifical Alta</li>
+                            </ul>
+                        </div>
                     </a>
-                    <a class="link active gestionar-alumnos" href="#" id="btn-alumnos" title="Alumnos">
+                    <a class="link gestionar-alumnos" href="#" id="btn-alumnos" title="Alumnos">
                         <i class="bi bi-backpack"></i>
+                        <span class="hidden">Alumnos</span>
                     </a>
-                    <a class="link active gestionar-materias" href="#" id="btn-materias" title="Materias">
+                    <a class="link gestionar-materias" href="#" id="btn-materias" title="Materias">
                         <i class="bi bi-journal-bookmark"></i>
+                        <span class="hidden">Materias</span>
                     </a>
-                    <a class="link active" href="#" id="btn-novedades" title="Novedades">
+                    <a class="link" href="#" id="btn-novedades" title="Novedades">
                         <i class="bi bi-chat-dots"></i>
+                        <span class="hidden">Novedades</span>
                     </a>
                 </div>
                 <div class="sidebar-bottom">
-                    <a class="link active exit" href="#" id="btn-exit" title="Cerrar Sesión">
+                    <a class="link exit" href="#" id="btn-exit" title="Cerrar Sesión">
                         <i class="bi bi-box-arrow-left"></i>
+                        <span class="hidden">Cerrar Sesión</span>
                     </a>
                 </div>
-            </nav>
+            </nav> -->
             <!-- Contenido Principal -->
             <section class="contenido-principal">
                 <div class="contenido-home" id="contenido-home">

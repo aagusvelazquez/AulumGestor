@@ -2,6 +2,25 @@ document.getElementById('anio').innerHTML = new Date().getFullYear();
 document.getElementById('añoCampusDesktop').innerHTML = new Date().getFullYear();
 // document.getElementById('añoCampusMobile').innerHTML = new Date().getFullYear();
 
+document.querySelector(".sidebar-btn").addEventListener('click', () => {
+  var sidebar = document.querySelector("aside");
+  document.body.classList.toggle("active");
+})
+
+function showDropdown(element) {
+  var dropdown = element.querySelector('.dropdown');
+  if (dropdown) {
+    dropdown.style.display = 'block';
+  }
+}
+
+function hideDropdown(element) {
+  var dropdown = element.querySelector('.dropdown');
+  if (dropdown) {
+    dropdown.style.display = 'none';
+  }
+}
+
 document.getElementById('login-btn').addEventListener('click', () => {
     var user = document.getElementById("user").value;
     var pass = document.getElementById("password").value;
