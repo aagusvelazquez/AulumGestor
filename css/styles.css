@@ -360,6 +360,7 @@ ol, ul {
  .dropdown {
    position: absolute !important;
    z-index: 5;
+   left: 3.5rem;
    display: none;
    color: var(--text-lighter);
    font-weight: 600;
@@ -371,6 +372,7 @@ ol, ul {
  }
  body.active .dropdown {
    position: relative;
+   left: 1rem;
    border: none;
    border-bottom: var(--text-lighter) 1px solid;
    border-radius: 0;
@@ -391,12 +393,16 @@ ol, ul {
    padding-top: 1rem;
    color: var(--text-lighter);
  }
- .sidebar-bottom > .link > i {
+ .sidebar-bottom > .menu-item > i {
    font-size: 1.2rem;
    padding: 0 .5rem;
  }
- .sidebar-bottom > .link:hover {
-   text-decoration: underline;
+ .sidebar-bottom > .menu-item:hover {
+   background-color: var(--text-lighter);
+    color: var(--text-dark);
+    & i {
+       color: var(--text-dark);
+   }
  }
  .sidebar-bottom .sidebar-links {
    padding-bottom: 1.5rem;

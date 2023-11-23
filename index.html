@@ -228,11 +228,11 @@
                         <span class="hidden">Maestros</span>
                       </div>
                       <ul class="dropdown">
-                          <li>Crear Alta</li>
-                          <li>Modificar Alta</li>
-                          <li>Buscar Alta</li>
-                          <li>Eliminar Alta</li>
-                          <li>Descargar Fichero</li>
+                          <li id="alta-meastro">Crear Alta</li>
+                          <li id="mod-meastro">Modificar Alta</li>
+                          <li id="buscar-meastro">Buscar Alta</li>
+                          <li id="eliminar-meastro">Eliminar Alta</li>
+                          <li id="descargar-meastro">Descargar Fichero</li>
                       </ul>
                     </li>
                     <li class="menu-dropdown" id="btn-alumnos" title="Alumnos" onmouseover="showDropdown(this)" onmouseout="hideDropdown(this)">
@@ -274,53 +274,6 @@
                   </a>
                 </div>
             </div>
-            <!-- <nav>
-                <div class="sidebar-header">
-                    <a class="logo-wrapper">
-                        <img src="./assets/img/logo.png" alt="Logo">
-                        <h2 class="hidden">Menú</h2>
-                    </a>
-                    <button class="sidebar-btn">
-                        <i class="bi bi-arrow-bar-right"></i>
-                    </button>
-                </div>
-                <div class="sidebar-links">
-                    <a class="link home" href="#" id="btn-home" title="Inicio">
-                        <i class="bi bi-house"></i>
-                        <span class="hidden">Inicio</span>
-                    </a>
-                    <a class="gestionar-maestros" href="#" id="btn-maestros" title="Maestros">
-                        <div class="link">
-                            <i class="bi bi-bank"></i>
-                            <span class="hidden">Maestros</span>
-                        </div>
-                        <div class="dropdown" style="display: none;">
-                            <ul>
-                                <li>Crear Alta</li>
-                                <li>Modifical Alta</li>
-                            </ul>
-                        </div>
-                    </a>
-                    <a class="link gestionar-alumnos" href="#" id="btn-alumnos" title="Alumnos">
-                        <i class="bi bi-backpack"></i>
-                        <span class="hidden">Alumnos</span>
-                    </a>
-                    <a class="link gestionar-materias" href="#" id="btn-materias" title="Materias">
-                        <i class="bi bi-journal-bookmark"></i>
-                        <span class="hidden">Materias</span>
-                    </a>
-                    <a class="link" href="#" id="btn-novedades" title="Novedades">
-                        <i class="bi bi-chat-dots"></i>
-                        <span class="hidden">Novedades</span>
-                    </a>
-                </div>
-                <div class="sidebar-bottom">
-                    <a class="link exit" href="#" id="btn-exit" title="Cerrar Sesión">
-                        <i class="bi bi-box-arrow-left"></i>
-                        <span class="hidden">Cerrar Sesión</span>
-                    </a>
-                </div>
-            </nav> -->
             <!-- Contenido Principal -->
             <section class="contenido-principal">
                 <div class="contenido-home" id="contenido-home">
@@ -425,11 +378,11 @@
                                         <label for="inputEmail" class="form-label">Correo electrónico:</label>
                                         <input type="email" class="form-control" id="inputEmail">
                                     </div>
-                                    <div class="col-md-6">
-                                      <label for="inputMateria1" class="form-label">Materia Dictada 1</label>
+                                    <div class="col-md-7">
+                                      <label for="inputMateria1" class="form-label">Materia Dictada</label>
                                       <input type="text" class="form-control" id="inputMateria1">
                                     </div>
-                                    <div class="col-md-4">
+                                    <div class="col-md-3">
                                       <label for="inputComision1" class="form-label">Comsisión</label>
                                       <select id="inputComision1" class="form-select">
                                         <option selected>Seleccion...</option>
@@ -440,20 +393,9 @@
                                       <label for="inputTurno1" class="form-label">Turno</label>
                                       <input type="text" class="form-control" id="inputTurno1">
                                     </div>
-                                    <div class="col-md-6">
-                                        <label for="inputMateria2" class="form-label">Materia Dictada 2</label>
-                                        <input type="text" class="form-control" id="inputMateria2">
-                                    </div>
-                                    <div class="col-md-4">
-                                        <label for="inputComision2" class="form-label">Comsisión</label>
-                                        <select id="inputComision2" class="form-select">
-                                          <option selected>Seleccion...</option>
-                                          <option>...</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-md-2">
-                                        <label for="inputTurno2" class="form-label">Turno</label>
-                                        <input type="text" class="form-control" id="inputTurno2">
+                                    <div class="col-md-7">
+                                        <label for="inputDoc" class="form-label">Cargar Documentación:</label>
+                                        <input type="file" class="form-control" id="inputDoc">
                                     </div>
                                     <div class="col-12">
                                       <button type="submit" class="btn btn-primary">Dar de Alta</button>
@@ -463,35 +405,19 @@
                             <section id="tab2-content" class="tab-content-maestros">
                                 <h2>Modificar Datos del Alta de Maestro</h2>
                                 <form class="row g-3">
-                                    <div class="col-md-6">
+                                    <div class="col-md-4">
                                       <label for="inputNombre" class="form-label">Nuevo nombre</label>
                                       <input type="text" class="form-control" id="inputNombre">
                                     </div>
-                                    <div class="col-md-6">
+                                    <div class="col-md-4">
                                       <label for="inputApellido" class="form-label">Nuevo apellido</label>
                                       <input type="text" class="form-control" id="inputApellido">
                                     </div>
-                                    <div class="col-md-2">
-                                      <label for="inputTipoDoc" class="form-label">Tipo</label>
-                                      <select id="inputTipoDoc" class="form-select" disabled>
-                                        <option selected>Seleccione...</option>
-                                        <option value="tipoDoc1">DNI - Documento Nacional de Identidad</option>
-                                        <option value="tipoDoc2">CI - Cédula de Identidad</option>
-                                        <option value="tipoDoc1">CIC/CI - Cédula de Identidad Civil</option>
-                                      </select>
-                                    </div>
-                                    <div class="col-md-5">
-                                       <label for="inputDoc" class="form-label">N° de Doc de Identidad</label>
-                                       <input type="number" class="form-control" id="inputDoc" disabled>
-                                    </div>
-                                    <div class="col-md-5">
-                                      <label for="inputNacim" class="form-label">Fecha de Nacimiento</label>
-                                      <input type="date" class="form-control" id="inputNacim" disabled>
-                                    </div>
-                                    <div class="col-md-7">
+                                    <div class="col-md-4">
                                         <label for="inputEmail" class="form-label">Nuevo correo electrónico:</label>
                                         <input type="email" class="form-control" id="inputEmail">
                                     </div>
+                                    <label for="">Agregar Materias</label>
                                     <div class="col-md-6">
                                       <label for="inputMateria1" class="form-label">Materia Dictada 1</label>
                                       <input type="text" class="form-control" id="inputMateria1">
@@ -522,16 +448,56 @@
                                         <label for="inputTurno2" class="form-label">Turno</label>
                                         <input type="text" class="form-control" id="inputTurno2">
                                     </div>
+                                    <div class="col-md-6">
+                                        <label for="inputDoc" class="form-label">Cargar Nueva Documentación:</label>
+                                        <input type="file" class="form-control" id="inputDoc">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="inputDoc2" class="form-label"></label>
+                                        <input type="file" class="form-control my-2" id="inputDoc2">
+                                    </div>
                                     <div class="col-12">
-                                      <button type="submit" class="btn btn-primary">Dar de Alta</button>
+                                      <button type="submit" class="btn btn-primary">Modificar Maestro</button>
                                     </div>
                                 </form> 
                             </section> 
                             <section id="tab3-content" class="tab-content-maestros">
                                 <h2>Buscar Alta de Maestro</h2>
+                                <form class="row g-3">
+                                  <div class="col-auto">
+                                    <label for="inputState" class="form-label">Tipo</label>
+                                    <select id="inputState" class="form-select">
+                                      <option selected>Seleccione...</option>
+                                      <option>...</option>
+                                    </select>
+                                  </div>
+                                  <div class="col-7">
+                                    <label for="inputCity" class="form-label">N° de Documento</label>
+                                    <input type="number" class="form-control" id="inputDocu">
+                                  </div>
+                                  <div class="col-auto">
+                                    <button type="submit" class="btn btn-primary" style="margin-top: 2rem;">Buscar</button>
+                                  </div>
+                                </form>
                             </section>
                             <section id="tab4-content" class="tab-content-maestros">
                                 <h2>Eliminar el Alta de Maestro</h2>
+                                <form class="row g-3">
+                                  <div class="col-auto">
+                                    <label for="inputState" class="form-label">Tipo</label>
+                                    <select id="inputState" class="form-select">
+                                      <option selected>Seleccione...</option>
+                                      <option>...</option>
+                                    </select>
+                                  </div>
+                                  <div class="col-7">
+                                    <label for="inputCity" class="form-label">N° de Documento</label>
+                                    <input type="number" class="form-control" id="inputDocu">
+                                  </div>
+                                  <div class="col-auto">
+                                    <button type="submit" class="btn btn-primary" style="margin-top: 2rem;">Buscar</button>
+                                  </div>
+                                </form>
                             </section>
                             <section id="tab5-content" class="tab-content-maestros">
                                 <h2>Descargar Fichero de Maestros</h2>
@@ -608,7 +574,7 @@
                                     <div class="col-md-7">
                                         <label for="inputEmail" class="form-label">Correo electrónico:</label>
                                         <input type="email" class="form-control" id="inputEmail">
-                                      </div>
+                                    </div>
                                     <div class="col-md-6">
                                       <label for="inputMateria1" class="form-label">Materia</label>
                                       <input type="text" class="form-control" id="inputMateria1">
@@ -623,6 +589,10 @@
                                     <div class="col-md-2">
                                       <label for="inputTurno1" class="form-label">Turno</label>
                                       <input type="text" class="form-control" id="inputTurno1">
+                                    </div>
+                                    <div class="col-md-7">
+                                        <label for="inputDoc" class="form-label">Cargar Documentación:</label>
+                                        <input type="file" class="form-control" id="inputDoc">
                                     </div>
                                     <div class="col-12">
                                       <button type="submit" class="btn btn-primary">Dar de Alta</button>
@@ -640,27 +610,12 @@
                                       <label for="inputApellido" class="form-label">Nuevo apellido</label>
                                       <input type="text" class="form-control" id="inputApellido">
                                     </div>
-                                    <div class="col-md-2">
-                                      <label for="inputTipoDoc" class="form-label">Tipo</label>
-                                      <select id="inputTipoDoc" class="form-select" disabled>
-                                        <option selected>Seleccione...</option>
-                                        <option value="tipoDoc1">DNI - Documento Nacional de Identidad</option>
-                                        <option value="tipoDoc2">CI - Cédula de Identidad</option>
-                                        <option value="tipoDoc1">CIC/CI - Cédula de Identidad Civil</option>
-                                      </select>
-                                    </div>
-                                    <div class="col-md-5">
-                                       <label for="inputDoc" class="form-label">N° de Doc de Identidad</label>
-                                       <input type="number" class="form-control" id="inputDoc" disabled>
-                                    </div>
-                                    <div class="col-md-5">
-                                      <label for="inputNacim" class="form-label">Fecha de Nacimiento</label>
-                                      <input type="date" class="form-control" id="inputNacim" disabled>
-                                    </div>
                                     <div class="col-md-7">
                                         <label for="inputEmail" class="form-label">Nuevo correo electrónico:</label>
                                         <input type="email" class="form-control" id="inputEmail">
-                                      </div>
+                                    </div>
+                                    <hr>
+                                    <label class="m-0 py-0">Modificar Cursada:</label>
                                     <div class="col-md-6">
                                       <label for="inputMateria1" class="form-label">Materia</label>
                                       <input type="text" class="form-control" id="inputMateria1">
@@ -676,16 +631,56 @@
                                       <label for="inputTurno1" class="form-label">Turno</label>
                                       <input type="text" class="form-control" id="inputTurno1">
                                     </div>
+                                  <div class="col-md-6">
+                                      <label for="inputDoc" class="form-label">Cargar Nueva Documentación:</label>
+                                      <input type="file" class="form-control" id="inputDoc">
+                                  </div>
+                                  <div class="col-md-6">
+                                      <label for="inputDoc2" class="form-label"></label>
+                                      <input type="file" class="form-control my-2" id="inputDoc2">
+                                  </div>
                                     <div class="col-12">
-                                      <button type="submit" class="btn btn-primary">Dar de Alta</button>
+                                      <button type="submit" class="btn btn-primary">Modificar Alumno</button>
                                     </div>
                                 </form> 
                             </section> 
                             <section id="tab3-content" class="tab-content-alumnos">
                                 <h2>Buscar Alta de Alumnos</h2>
+                                <form class="row g-3">
+                                  <div class="col-auto">
+                                    <label for="inputState" class="form-label">Tipo</label>
+                                    <select id="inputState" class="form-select">
+                                      <option selected>Seleccione...</option>
+                                      <option>...</option>
+                                    </select>
+                                  </div>
+                                  <div class="col-7">
+                                    <label for="inputCity" class="form-label">N° de Documento</label>
+                                    <input type="number" class="form-control" id="inputDocu">
+                                  </div>
+                                  <div class="col-auto">
+                                    <button type="submit" class="btn btn-primary" style="margin-top: 2rem;">Buscar</button>
+                                  </div>
+                                </form>
                             </section>
                             <section id="tab4-content" class="tab-content-alumnos">
                                 <h2>Eliminar el Alta de Alumnos</h2>
+                                <form class="row g-3">
+                                  <div class="col-auto">
+                                    <label for="inputState" class="form-label">Tipo</label>
+                                    <select id="inputState" class="form-select">
+                                      <option selected>Seleccione...</option>
+                                      <option>...</option>
+                                    </select>
+                                  </div>
+                                  <div class="col-7">
+                                    <label for="inputCity" class="form-label">N° de Documento</label>
+                                    <input type="number" class="form-control" id="inputDocu">
+                                  </div>
+                                  <div class="col-auto">
+                                    <button type="submit" class="btn btn-primary" style="margin-top: 2rem;">Buscar</button>
+                                  </div>
+                                </form>
                             </section>
                             <section id="tab5-content" class="tab-content-alumnos">
                                 <h2>Descargar Fichero de Alumnos</h2>
@@ -701,148 +696,135 @@
                         <ul class="tabs-materias">
                             <li>
                                 <a id="tab1" title="Crear Alta" href="#tab1">
-                                    <i class="bi bi-people"></i>
-                                    Crear Alta
+                                  <i class="bi bi-journal-check"></i>
+                                    Habilitar Materia
                                 </a>
                             </li>
                             <li>
                                 <a id="tab2" title="Modificar Alta" href="#tab2">
                                     <i class="bi bi-brush"></i>
-                                    Modificar Alta
+                                    Modificar Materia
                                 </a>
                             </li>
                             <li>
                                 <a id="tab3" title="Buscar Alta" href="#tab3">
                                     <i class="bi bi-search"></i>
-                                    Buscar Alta
+                                    Buscar Materia
                                 </a>
                             </li>
                             <li>
                                 <a id="tab4" title="Eliminar Altat" href="#tab4">
-                                    <i class="bi bi-person-x"></i>              
-                                    Eliminar Alta
+                                  <i class="bi bi-journal-minus"></i>
+                                    Deshabilitar Materia
                                 </a>
                             </li>
                             <li>
                                 <a id="tab5" title="Descargar Fichero" href="#tab5">
-                                    <i class="bi bi-file-earmark-arrow-down"></i>
-                                    Descargar Fichero
+                                  <i class="bi bi-journal-arrow-down"></i>
+                                    Descargar
                                 </a>
                             </li>
                         </ul>
                         <div class="tab-content-wrapper-materias">
                             <section id="tab1-content" class="tab-content-materias">
-                                <h2>Crear Alta de Alumno</h2>
+                                <h2>Alta - Materia</h2>
                                 <form class="row g-3">
-                                    <div class="col-md-6">
-                                      <label for="inputNombre" class="form-label">Nombre</label>
-                                      <input type="text" class="form-control" id="inputNombre">
+                                    <div class="col-10">
+                                      <label for="inputAsignatura" class="form-label">Asignatura:</label>
+                                      <input type="text" class="form-control" id="inputAsignatura">
                                     </div>
-                                    <div class="col-md-6">
-                                      <label for="inputApellido" class="form-label">Apellido</label>
-                                      <input type="text" class="form-control" id="inputApellido">
+                                    <div class="col-10">
+                                      <label for="inputCargaHoraria" class="form-label">Carga Horaria (expresar en horas cátedra):</label>
+                                      <input type="number" class="form-control" id="inputCargaHoraria">
                                     </div>
-                                    <div class="col-md-2">
-                                      <label for="inputTipoDoc" class="form-label">Tipo</label>
-                                      <select id="inputTipoDoc" class="form-select">
+                                    <div class="col-10">
+                                      <label for="inputComisionMateria" class="form-label">Comisión:</label>
+                                      <select id="inputComisionMateria" class="form-select">
                                         <option selected>Seleccione...</option>
-                                        <option value="tipoDoc1">DNI - Documento Nacional de Identidad</option>
-                                        <option value="tipoDoc2">CI - Cédula de Identidad</option>
-                                        <option value="tipoDoc1">CIC/CI - Cédula de Identidad Civil</option>
-                                      </select>
-                                    </div>
-                                    <div class="col-md-5">
-                                       <label for="inputDoc" class="form-label">N° de Doc de Identidad</label>
-                                       <input type="number" class="form-control" id="inputDoc">
-                                    </div>
-                                    <div class="col-md-5">
-                                      <label for="inputNacim" class="form-label">Fecha de Nacimiento</label>
-                                      <input type="date" class="form-control" id="inputNacim">
-                                    </div>
-                                    <div class="col-md-7">
-                                        <label for="inputEmail" class="form-label">Correo electrónico:</label>
-                                        <input type="email" class="form-control" id="inputEmail">
-                                      </div>
-                                    <div class="col-md-6">
-                                      <label for="inputMateria1" class="form-label">Materia</label>
-                                      <input type="text" class="form-control" id="inputMateria1">
-                                    </div>
-                                    <div class="col-md-4">
-                                      <label for="inputComision1" class="form-label">Comsisión</label>
-                                      <select id="inputComision1" class="form-select">
-                                        <option selected>Seleccion...</option>
                                         <option>...</option>
                                       </select>
                                     </div>
-                                    <div class="col-md-2">
-                                      <label for="inputTurno1" class="form-label">Turno</label>
-                                      <input type="text" class="form-control" id="inputTurno1">
+                                    <div class="col-10">
+                                      <label for="inputComisionMateria" class="form-label">Seleccione maestro que la dicta:</label>
+                                       <select id="inputMaestroDicta" class="form-select">
+                                        <option selected>Seleccione...</option>
+                                        <option>...</option>
+                                      </select>
                                     </div>
+                                    <div class="col-md-7">
+                                      <label for="inputDoc" class="form-label">Cargar Programa:</label>
+                                      <input type="file" class="form-control" id="inputDoc">
+                                  </div>
                                     <div class="col-12">
                                       <button type="submit" class="btn btn-primary">Dar de Alta</button>
                                     </div>
                                 </form>
                             </section>
                             <section id="tab2-content" class="tab-content-materias">
-                                <h2>Modificar Datos del Alta de Alumno</h2>
+                                <h2>Modificar Información de Materia</h2>
                                 <form class="row g-3">
-                                    <div class="col-md-6">
-                                      <label for="inputNombre" class="form-label">Nuevo nombre</label>
-                                      <input type="text" class="form-control" id="inputNombre">
-                                    </div>
-                                    <div class="col-md-6">
-                                      <label for="inputApellido" class="form-label">Nuevo apellido</label>
-                                      <input type="text" class="form-control" id="inputApellido">
-                                    </div>
-                                    <div class="col-md-2">
-                                      <label for="inputTipoDoc" class="form-label">Tipo</label>
-                                      <select id="inputTipoDoc" class="form-select" disabled>
-                                        <option selected>Seleccione...</option>
-                                        <option value="tipoDoc1">DNI - Documento Nacional de Identidad</option>
-                                        <option value="tipoDoc2">CI - Cédula de Identidad</option>
-                                        <option value="tipoDoc1">CIC/CI - Cédula de Identidad Civil</option>
-                                      </select>
-                                    </div>
-                                    <div class="col-md-5">
-                                       <label for="inputDoc" class="form-label">N° de Doc de Identidad</label>
-                                       <input type="number" class="form-control" id="inputDoc" disabled>
-                                    </div>
-                                    <div class="col-md-5">
-                                      <label for="inputNacim" class="form-label">Fecha de Nacimiento</label>
-                                      <input type="date" class="form-control" id="inputNacim" disabled>
-                                    </div>
-                                    <div class="col-md-7">
-                                        <label for="inputEmail" class="form-label">Nuevo correo electrónico:</label>
-                                        <input type="email" class="form-control" id="inputEmail">
-                                      </div>
-                                    <div class="col-md-6">
-                                      <label for="inputMateria1" class="form-label">Materia</label>
-                                      <input type="text" class="form-control" id="inputMateria1">
-                                    </div>
-                                    <div class="col-md-4">
-                                      <label for="inputComision1" class="form-label">Comsisión</label>
-                                      <select id="inputComision1" class="form-select">
-                                        <option selected>Seleccion...</option>
-                                        <option>...</option>
-                                      </select>
-                                    </div>
-                                    <div class="col-md-2">
-                                      <label for="inputTurno1" class="form-label">Turno</label>
-                                      <input type="text" class="form-control" id="inputTurno1">
-                                    </div>
-                                    <div class="col-12">
-                                      <button type="submit" class="btn btn-primary">Dar de Alta</button>
-                                    </div>
-                                </form> 
+                                  <div class="col-10">
+                                    <label for="inputCargaHoraria" class="form-label">Carga Horaria (expresar en horas cátedra):</label>
+                                    <input type="number" class="form-control" id="inputCargaHoraria">
+                                  </div>
+                                  <div class="col-10">
+                                    <label for="inputComisionNuevaMateria" class="form-label">Asignar Nueva Comisión:</label>
+                                    <select id="inputComisionNuevaMateria" class="form-select">
+                                      <option selected>Seleccione...</option>
+                                      <option>...</option>
+                                    </select>
+                                  </div>
+                                  <div class="col-10">
+                                    <label for="inputComisionMateria" class="form-label">Seleccione maestro que la dicta:</label>
+                                     <select id="inputMaestroDicta" class="form-select">
+                                      <option selected>Seleccione...</option>
+                                      <option>...</option>
+                                    </select>
+                                  </div>
+                                  <div class="col-md-7">
+                                    <label for="inputDoc" class="form-label">Cargar Programa:</label>
+                                    <input type="file" class="form-control" id="inputDoc">
+                                </div>
+                                  <div class="col-12">
+                                    <button type="submit" class="btn btn-primary">Modificar Materia</button>
+                                  </div>
+                              </form>
                             </section> 
                             <section id="tab3-content" class="tab-content-materias">
-                                <h2>Buscar Alta de Alumnos</h2>
+                                <h2>Buscar Materia</h2>
+                                <form class="row g-3">
+                                  <div class="col-2">
+                                    <label for="staticEmail2" class="visually-hidden">Asginatura:</label>
+                                    <input type="text" readonly class="form-control-plaintext" id="staticEmail2" value="Asginatura:">
+                                  </div>
+                                  <div class="col-8">
+                                    <label for="inputPassword2" class="visually-hidden">Nombre de Asignatura:</label>
+                                    <input type="password" class="form-control" id="inputPassword2" placeholder="Ej: Bioquímica">
+                                  </div>
+                                  <div class="col-2">
+                                    <button type="submit" class="btn btn-primary mb-3">Buscar</button>
+                                  </div>
+                                </form>
                             </section>
                             <section id="tab4-content" class="tab-content-materias">
-                                <h2>Eliminar el Alta de Alumnos</h2>
+                                <h2>Deshabilitar Materia</h2>
+                                <p>Sólo afectará a nuevas inscripciones.</p>
+                                <form class="row g-3">
+                                  <div class="col-2">
+                                    <label for="staticEmail2" class="visually-hidden">Asginatura:</label>
+                                    <input type="text" readonly class="form-control-plaintext" id="staticEmail2" value="Asginatura:">
+                                  </div>
+                                  <div class="col-8">
+                                    <label for="inputPassword2" class="visually-hidden">Nombre de Asignatura:</label>
+                                    <input type="password" class="form-control" id="inputPassword2" placeholder="Ej: Bioquímica">
+                                  </div>
+                                  <div class="col-2">
+                                    <button type="submit" class="btn btn-primary mb-3">Buscar</button>
+                                  </div>
+                                </form>
                             </section>
                             <section id="tab5-content" class="tab-content-materias">
-                                <h2>Descargar Fichero de Alumnos</h2>
+                                <h2>Descargar Información de Materia</h2>
                             </section>
                         </div>
                     </div>

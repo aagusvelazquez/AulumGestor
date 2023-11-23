@@ -127,6 +127,7 @@ document.getElementById("btn-maestros").addEventListener('click', () => {
   var maestros = document.getElementById("contenido-maestros");
   var alumnos = document.getElementById("contenido-alumnos");
   var materias = document.getElementById("contenido-materias");
+  var sidebar = document.querySelector(".sidebar");
 
   maestros.style.display = "block";
   home.style.display = 'none';
@@ -134,16 +135,21 @@ document.getElementById("btn-maestros").addEventListener('click', () => {
   materias.style.display = 'none';
 });
 document.getElementById("area-maestros").addEventListener('click', () => {
-  var home = document.getElementById("contenido-home");
-  var maestros = document.getElementById("contenido-maestros");
-  var alumnos = document.getElementById("contenido-alumnos");
-  var materias = document.getElementById("contenido-materias");
+  let home = document.getElementById("contenido-home");
+  let maestros = document.getElementById("contenido-maestros");
+  let alumnos = document.getElementById("contenido-alumnos");
+  let materias = document.getElementById("contenido-materias");
 
   maestros.style.display = "block";
   home.style.display = 'none';
   alumnos.style.display = 'none';
   materias.style.display = 'none';
 });
+
+
+
+
+
 
 document.getElementById("btn-alumnos").addEventListener('click', () => {
   var home = document.getElementById("contenido-home");
